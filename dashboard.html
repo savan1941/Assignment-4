@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <div id="menubar">
+          <h3>Dashboard</h3>
+          <br /><br />
+          <h3 id="agency">Agency</h3>
+          <br /><br />
+          <h3>Client</h3>
+          <br /><br />
+          <h3>Associations</h3>
+        </div>
+      </div>
+
+      <div id="right">
+        <div id="profile">
+          <img src="download.png" alt="Avatar" class="avatar" />
+          <div id="name">
+            <h4>Savan</h4>
+            <h4>Sangani</h4>
+          </div>
+        </div>
+        <div id="searchbar">
+          <input type="text" placeholder="Search.." name="search" id="search" />
+        </div>
+
+        <div id="agencyblock">
+          <div id="btnblock">
+            <button id="logout">Logout</button>
+            <button id="addagency">Add Agency</button>
+          </div>
+          <div id="tbl">
+            <table id="airtable" style="width:100%">
+                <tr>
+                    <th># &nbsp; &#x2191;</th>
+                    <th>Name&nbsp; &#x2191;</th>
+                    <th>Email&nbsp; &#x2191;</th>
+                    <th>Phone&nbsp; &#x2191;</th>
+                    <th>City&nbsp; &#x2191;</th>
+                    <th>Country&nbsp; &#x2191;</th>
+                    <th>Action</th>
+
+                </tr>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Savan</td>
+                    <td>savan@gmail.com</td>
+                    <td>99999999</td>
+                    <td>talala</td>
+                    <td>india</td>
+                    <td><button id="edit">Edit</button>
+                    <button id="delete">Delete</button></td>
+                    
+                </tr> -->
+                
+          </div>
+
+          
+         <!-- for add agency button  -->
+          <div id="myModel" class="modal">
+            <form id="addform" id="model-content">
+              <div id="additem">
+                <span class="close">&times;</span>
+                <h3>Add Item</h3>
+              </div>
+              <p>Name</p>
+              <input type="text" id="uname" name="username" required />
+              <p>Email</p>
+              <input type="email" id="email" name="email" required />
+              <p>Password</p>
+              <input type="password" id="pwd" name="pwd" required />
+              <p>Phone</p>
+              <input
+                type="number"
+                id="phnnumber"
+                name="phonenumber"
+                length="10"
+                required
+              />
+              <p>City</p>
+              <input type="text" id="city" name="username" required />
+              <p>Country</p>
+              <input type="country" /><br /><br />
+              <!-- <p>Profile Image</p> -->
+              <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
+              <div id="savecancel">
+
+                  <button type="submit" id="add">Save</button>
+                  <button type="submit" id="cancel">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- for edit info -->
+
+          <div id="editModel" class="editmodal">
+            <form id="editform" id="edit-content">
+              <div id="edititem">
+                <span class="editclose" onclick="backfun()">&times;</span>
+                <h3>Update User Profile</h3>
+              </div>
+              <p>Name</p>
+              <input type="text" id="editname" name="username" required />
+              <p>Email</p>
+              <input type="email" id="editemail" name="email" required />
+              <p>Password</p>
+              <input type="password" id="editpwd" name="pwd" required />
+              <p>Phone</p>
+              <input
+                type="number"
+                id="rditphnnumber"
+                name="phonenumber"
+                length="10"
+                required
+              />
+              <p>City</p>
+              <input type="text" id="editcity" name="username" required />
+              <p>Country</p>
+              <input type="country" /><br /><br />
+              <!-- <p>Profile Image</p> -->
+              <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
+              <div id="savecancel">
+
+                  <button type="submit" id="update">Update</button>
+                  <button type="submit" id="editcancel" onclick="backfun()">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
