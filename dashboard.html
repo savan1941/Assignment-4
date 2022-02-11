@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="dashboard.css" />
+    <script src="https://kit.fontawesome.com/e75855d67a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="container">
@@ -41,12 +42,12 @@
           <div id="tbl">
             <table id="airtable" style="width:100%">
                 <tr>
-                    <th># &nbsp; &#x2191;</th>
-                    <th>Name&nbsp; &#x2191;</th>
-                    <th>Email&nbsp; &#x2191;</th>
-                    <th>Phone&nbsp; &#x2191;</th>
-                    <th>City&nbsp; &#x2191;</th>
-                    <th>Country&nbsp; &#x2191;</th>
+                    <th>#  <button><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>Name <button onclick="sortbyname()" id="sname" class="show3"><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>Email <button><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>Phone <button><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>City <button onclick="sortbycity()" id="scity" class="show1"><i class="fa-solid fa-arrow-up" ></i></button></th>
+                    <th>Country <button onclick="sortbycountry()" class="show" id="scountry"><i class="fa-solid fa-arrow-up"></i></button></th>
                     <th>Action</th>
 
                 </tr>
@@ -67,7 +68,7 @@
           
          <!-- for add agency button  -->
           <div id="myModel" class="modal">
-            <form id="addform" id="model-content">
+            <form  id="model-content">
               <div id="additem">
                 <span class="close">&times;</span>
                 <h3>Add Item</h3>
@@ -76,8 +77,8 @@
               <input type="text" id="uname" name="username" required />
               <p>Email</p>
               <input type="email" id="email" name="email" required />
-              <p>Password</p>
-              <input type="password" id="pwd" name="pwd" required />
+              <!-- <p>Password</p>
+              <input type="password" id="pwd" name="pwd" required /> -->
               <p>Phone</p>
               <input
                 type="number"
@@ -89,13 +90,13 @@
               <p>City</p>
               <input type="text" id="city" name="username" required />
               <p>Country</p>
-              <input type="country" /><br /><br />
+              <input type="country" id="country" /><br /><br />
               <!-- <p>Profile Image</p> -->
               <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
               <div id="savecancel">
 
-                  <button type="submit" id="add">Save</button>
-                  <button type="submit" id="cancel">Cancel</button>
+                  <button type="submit" id="add" >Save</button>
+                  <button  id="cancel">Cancel</button>
               </div>
             </form>
           </div>
@@ -112,26 +113,26 @@
               <input type="text" id="editname" name="username" required />
               <p>Email</p>
               <input type="email" id="editemail" name="email" required />
-              <p>Password</p>
-              <input type="password" id="editpwd" name="pwd" required />
+              <!-- <p>Password</p>
+              <input type="password" id="editpwd" name="pwd" required /> -->
               <p>Phone</p>
               <input
                 type="number"
-                id="rditphnnumber"
+                id="editphnnumber"
                 name="phonenumber"
-                length="10"
+                
                 required
               />
               <p>City</p>
               <input type="text" id="editcity" name="username" required />
               <p>Country</p>
-              <input type="country" /><br /><br />
+              <input type="country" id="editcountry"/><br /><br />
               <!-- <p>Profile Image</p> -->
               <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
               <div id="savecancel">
 
                   <button type="submit" id="update">Update</button>
-                  <button type="submit" id="editcancel" onclick="backfun()">Cancel</button>
+                  <button id="editcancel" onclick="backfun()">Cancel</button>
               </div>
             </form>
           </div>

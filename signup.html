@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="signup.css" />
-    <script src="signup.js"></script>
   </head>
   <body>
     <div id="container">
-      <form id="signupform">
+      <form id="signupform" class="signupfrm">
         <p>Name</p>
         <input type="text" id="uname" name="username" required />
         <p>Email</p>
@@ -26,13 +25,14 @@
           required
         />
         <p>City</p>
-        <input type="text" id="uname" name="username" required />
+        <input type="text" id="city" name="username" required />
         <p>Country</p>
-        <input type="country" />
+        <input type="country" id="country" />
         <!-- <p>Profile Image</p> -->
         <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
-        <button type="submit" id="signup" onclick="store()">Sign Up</button>
+        <button type="submit" id="signup">Sign Up</button>
       </form>
     </div>
+    <script src="signup.js"></script>
   </body>
 </html>

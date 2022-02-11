@@ -9,22 +9,16 @@
   </head>
   <body>
     <div id="container">
-      <div id="login">
-        <div id="email">
-          <p>Email</p>
-          <input type="email" id="email" name="email" />
-        </div>
+      <form id="loginform" class="loginfrm">
+        <p>Email</p>
+        <input type="email" id="email" name="email" required />
+        <p>Password</p>
+        <input type="password" id="pwd" name="pwd" required />
 
-        <div id="password">
-          <p>Password</p>
-          <input type="password" id="pwd" name="pwd" />
-        </div>
-      </div>
-      <div id="btn">
-        <button id="loginbtn">Login</button><br />
-        <button id="signup">Sign Up</button>
-      </div>
-      <p id="forgot">Forgot Password?</p>
+        <button type="submit" id="login">Login</button>
+        <button id="signup" ">Sign Up</button>
+      </form>
+      <script src="login.js"></script>
     </div>
   </body>
 </html>
