@@ -16,21 +16,23 @@
   height: 300px;
   margin-top: 300px;
 }
-#login {
+/* #login {
   margin-top: 80px;
 }
 #password {
   margin-top: 15px;
-}
+} */
 input {
+  display: flex;
+  margin: auto;
   border: 1px solid #40189d;
   border-radius: 5px;
   padding: 5px;
   box-shadow: 0px 0px 1px #40189d;
 }
-#forgot {
+/* #forgot {
   padding: 10px;
-}
+} */
 button {
   color: white;
   background-color: #40189d;
@@ -41,6 +43,6 @@ button {
 
   width: 75px;
 }
-#btn {
+/* #btn {
   display: flex;
-}
+} */

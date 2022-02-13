@@ -69,7 +69,7 @@
   background-color: white;
   border-radius: 8px;
   margin: 20px;
-  height: 500px;
+  height: 600px;
 }
 #addagency {
   padding: 10px;
@@ -126,7 +126,7 @@
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   /* Location of the box */
-
+  top: 81px;
   /* Full width */
   /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -156,7 +156,7 @@ h3 {
 input {
   border: 1px solid #40189d;
   border-radius: 5px;
-  padding: 3px;
+  padding: 10px;
   box-shadow: 0px 0px 1px #40189d;
   margin-left: 15px;
   width: 370px;
@@ -218,7 +218,7 @@ tr {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   /* Location of the box */
-
+  top: 81px;
   /* Full width */
   /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -288,7 +288,109 @@ tr {
   background-color: silver;
   align-items: center;
   width: 230px;
-  height: 30px;
+  height: 42px;
   text-align: center;
   border-radius: 20px;
+  display: flex;
+    justify-content: center;
+}
+
+#pagination{
+  display: flex;
+}
+
+#center{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  
+}
+#previous{
+
+  background-color: #40189d;
+  
+  border: 1px solid #40189d;
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+}
+#next{
+
+  background-color: #40189d;
+  
+  border: 1px solid #40189d;
+  border-radius: 5px;
+  color: white;
+  margin-left: 8px;
+  width: 100px;
+ 
+}
+
+#currpage{
+  font-size: 25px;
+}
+
+.updatemodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* Location of the box */
+  top: 150px;
+  /* Full width */
+  /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: white; /* Black w/ opacity */
+  height: 535px;
+  margin-top: 80px;
+
+  width: 420px;
+  margin: auto;
+  margin-left: 300px;
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: column;
+  border: 2px solid silver;
+  box-shadow: 0px 0px 20px silver;
+  border-radius: 5px;
+}
+
+.updateclose {
+  color: #aaaaaa;
+
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  align-items: center;
+  margin-top: -10px;
+  margin-right: 20px;
+}
+
+.updateclose:hover,
+.updateclose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+#updatecancel {
+  color: white;
+  background-color: silver;
+  padding: 5px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 15px;
+
+  width: 75px;
+}
+#adminupdate {
+  color: white;
+  background-color: #40189d;
+  padding: 5px;
+  border: 1px solid #40189d;
+  border-radius: 5px;
+
+  margin-left: 15px;
+  font-size: 18px;
+  width: 75px;
 }

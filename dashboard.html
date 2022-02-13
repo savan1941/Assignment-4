@@ -6,47 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="dashboard.css" />
+    <script src="https://kit.fontawesome.com/e75855d67a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="container">
       <div id="left">
         <div id="menubar">
-          <h3>Dashboard</h3>
+          <h3><i class="fas fa-home"></i>&nbsp;Dashboard</h3>
           <br /><br />
-          <h3 id="agency">Agency</h3>
+          <h3 id="agency"><i id="logo" class="far fa-address-book"></i>&nbsp;Agency</h3>
           <br /><br />
-          <h3>Client</h3>
+          <h3><i class="fas fa-archway"></i>&nbsp;Client</h3>
           <br /><br />
-          <h3>Associations</h3>
+          <h3><i class="fas fa-network-wired"></i>&nbsp;Associations</h3>
         </div>
       </div>
 
       <div id="right">
-        <div id="profile">
-          <img src="download.png" alt="Avatar" class="avatar" />
-          <div id="name">
+        <div id="profile"  >
+          <img src="download.png" alt="Avatar"  />
+          
+          <!-- <div id="name">
             <h4>Savan</h4>
-            <h4>Sangani</h4>
-          </div>
+            
+          </div> -->
         </div>
         <div id="searchbar">
-          <input type="text" placeholder="Search.." name="search" id="search" />
+          <input type="text" placeholder="Search by country" name="search" id="searchcountry" oninput="search()"/>
         </div>
 
         <div id="agencyblock">
           <div id="btnblock">
-            <button id="logout">Logout</button>
+            <button id="logout" onclick="logout()">Logout</button>
             <button id="addagency">Add Agency</button>
           </div>
           <div id="tbl">
             <table id="airtable" style="width:100%">
                 <tr>
-                    <th># &nbsp; &#x2191;</th>
-                    <th>Name&nbsp; &#x2191;</th>
-                    <th>Email&nbsp; &#x2191;</th>
-                    <th>Phone&nbsp; &#x2191;</th>
-                    <th>City&nbsp; &#x2191;</th>
-                    <th>Country&nbsp; &#x2191;</th>
+                    <th>#  <button onclick="sortbynumber()" class="show4" id="snumber"><i class="fa-solid fa-arrow-up" ></i></button></th>
+                    <th>Name <button onclick="sortbyname()" id="sname" class="show3"><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>Email <button><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>Phone <button><i class="fa-solid fa-arrow-up"></i></button></th>
+                    <th>City <button onclick="sortbycity()" id="scity" class="show1"><i class="fa-solid fa-arrow-up" ></i></button></th>
+                    <th>Country <button onclick="sortbycountry()" class="show" id="scountry"><i class="fa-solid fa-arrow-up"></i></button></th>
                     <th>Action</th>
 
                 </tr>
@@ -61,6 +63,17 @@
                     <button id="delete">Delete</button></td>
                     
                 </tr> -->
+            </table>  
+            <div id="center">
+
+              <div id="loader"></div>
+  
+                  <div id="pagination">
+                      <button id="previous" onclick="callpreviouspage()">Previous</button>
+                      <p id="currpage"></p>
+                      <button id="next" onclick="callnextpage()">Next</button>
+                  </div>
+            </div>
                 
           </div>
 
@@ -117,21 +130,57 @@
               <p>Phone</p>
               <input
                 type="number"
-                id="rditphnnumber"
+                id="editphnnumber"
                 name="phonenumber"
-                length="10"
+                
                 required
               />
               <p>City</p>
               <input type="text" id="editcity" name="username" required />
               <p>Country</p>
-              <input type="country" /><br /><br />
+              <input type="country" id="editcountry"/><br /><br />
               <!-- <p>Profile Image</p> -->
               <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
               <div id="savecancel">
 
                   <button type="submit" id="update">Update</button>
-                  <button type="submit" id="editcancel" onclick="backfun()">Cancel</button>
+                  <button id="editcancel" onclick="backfun()">Cancel</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- update information of admin -->
+          
+          <div id="updateModel" class="updatemodal">
+            <form id="updateform" id="update-content">
+              <div id="updateitem">
+                <span class="updateclose" onclick="updatebackfun()">&times;</span>
+                <h3>Update Admin Profile</h3>
+              </div>
+              <p>Name</p>
+              <input type="text" id="updatename" name="username" required />
+              <p>Email</p>
+              <input type="email" id="updateemail" name="email" required />
+              <p>Password</p>
+              <input type="password" id="updatepwd" name="pwd" required />
+              <p>Phone</p>
+              <input
+                type="number"
+                id="updatephnnumber"
+                name="phonenumber"
+                
+                required
+              />
+              <p>City</p>
+              <input type="text" id="updatecity" name="username" required />
+              <p>Country</p>
+              <input type="country" id="updatecountry"/><br /><br />
+              <!-- <p>Profile Image</p> -->
+              <!-- <input type="file" id="img" name="img" accept="image/*" required /> -->
+              <div id="savecancel">
+
+                  <button type="submit" id="adminupdate" onclick="updateinlocalstorage()">Update</button>
+                  <button id="updatecancel" onclick="updatebackfun()">Cancel</button>
               </div>
             </form>
           </div>
